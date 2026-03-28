@@ -5,7 +5,7 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const { walletAddress } = body;
 
-  if (!walletAddress || !walletAddress.startsWith("0x")) {
+  if (!walletAddress || typeof walletAddress !== "string") {
     return NextResponse.json({ error: "Invalid wallet address." }, { status: 400 });
   }
 
@@ -17,7 +17,10 @@ export async function POST(req: NextRequest) {
   );
 
   if (!existingUser) {
-    const username = `wallet_${normalised.slice(2, 10)}`;
+    const isEth = normalised.startsWith("0x");
+    const addressFragment = isEth ? normalised.slice(2, 10) : normalised.slice(0, 8);
+    const username = `wallet_${addressFragment}`;
+    
     existingUser = {
       id: generateToken().slice(0, 16),
       username,

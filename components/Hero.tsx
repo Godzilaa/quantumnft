@@ -1,3 +1,6 @@
+"use client";
+import React, { useState, useEffect } from "react";
+
 const MultiRewardIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
     <rect width="32" height="32" rx="8" fill="none" stroke="#444" strokeWidth="1.5" />
@@ -15,6 +18,20 @@ const EarnIcon = () => (
 );
 
 export default function Hero() {
+  const [content, setContent] = useState({
+    heroTitle: "DISCOVER, COLLECT, AND SELL EXTRAORDINARY NFTs",
+    heroSubtitle: "Welcome to Treasure Fun - the world's first and largest digital marketplace for crypto collectibles. Start exploring and earning today."
+  });
+
+  useEffect(() => {
+    fetch("/api/content")
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.heroTitle) setContent(data);
+      })
+      .catch(err => console.error("Could not load dynamic content:", err));
+  }, []);
+
   return (
     <section
       style={{
@@ -47,7 +64,7 @@ export default function Hero() {
               letterSpacing: "-0.5px",
             }}
           >
-            EXPLORE, DISCOVER AND EARN BIG WITH ONE OF THE TOP WEB3 NFT MARKETPLACES IN THE WORLD
+            {content.heroTitle}
           </h1>
         </div>
 

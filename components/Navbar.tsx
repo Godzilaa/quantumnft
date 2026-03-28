@@ -1,5 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import LoginModal from "@/components/LoginModal";
 
 /* ─── top-bar icons ─── */
@@ -111,6 +112,7 @@ export default function Navbar() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [user,        setUser]        = useState<AuthUser | null>(null);
   const menuRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   /* restore session from localStorage */
   useEffect(() => {
@@ -133,7 +135,10 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", onDown);
   }, [menuOpen]);
 
-  function handleLoginSuccess(u: AuthUser) { setUser(u); }
+  function handleLoginSuccess(u: AuthUser) { 
+    setUser(u); 
+    router.push("/dashboard");
+  }
 
   function handleLogout() {
     localStorage.removeItem("tf_token");
