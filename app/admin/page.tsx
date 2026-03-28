@@ -1,9 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Settings, Save, CheckCircle, Smartphone, Monitor } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Settings, Save, CheckCircle, Smartphone, Monitor, LogOut } from "lucide-react";
 import Navbar from "@/components/Navbar";
 
 export default function AdminPage() {
+  const router = useRouter();
+  const [authed, setAuthed] = useState(false);
   const [content, setContent] = useState({
     heroTitle: "",
     heroSubtitle: "",
@@ -15,11 +18,31 @@ export default function AdminPage() {
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
-    fetch("/api/content")
-      .then(res => res.json())
-      .then(data => setContent(data))
-      .catch(console.error);
-  }, []);
+    const token = localStorage.getItem("admin_token");
+    if (!token) { router.replace("/admin/login"); return; }
+    fetch("/api/admin/auth", { headers: { Authorization: `Bearer ${token}` } })
+      .then(r => {
+        if (!r.ok) { router.replace("/admin/login"); return; }
+        setAuthed(true);
+        fetch("/api/content")
+          .then(res => res.json())
+          .then(data => setContent(data))
+          .catch(console.error);
+      })
+      .catch(() => router.replace("/admin/login"));
+  }, [router]);
+
+  const handleLogout = async () => {
+    const token = localStorage.getItem("admin_token");
+    if (token) {
+      await fetch("/api/admin/auth", {
+        method: "DELETE",
+        headers: { Authorization: `Bearer ${token}` },
+      }).catch(() => {});
+      localStorage.removeItem("admin_token");
+    }
+    router.replace("/admin/login");
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setContent({ ...content, [e.target.name]: e.target.value });
@@ -42,18 +65,29 @@ export default function AdminPage() {
     setTimeout(() => setSaved(false), 3000);
   };
 
+  if (!authed) return null;
+
   return (
     <div className="min-h-screen bg-slate-50">
       <Navbar />
       <div className="max-w-4xl mx-auto pt-32 pb-20 px-6">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-12 h-12 bg-indigo-600 rounded-xl shadow-lg flex items-center justify-center text-white">
-            <Settings size={26} />
+        <div className="flex items-center justify-between mb-8">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 bg-indigo-600 rounded-xl shadow-lg flex items-center justify-center text-white">
+              <Settings size={26} />
+            </div>
+            <div>
+              <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Platform Content CMS</h1>
+              <p className="text-slate-500 font-medium">Manage text and elements across the QuantNFT frontend.</p>
+            </div>
           </div>
-          <div>
-            <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">Platform Content CMS</h1>
-            <p className="text-slate-500 font-medium">Manage text and elements across the Treasure Fun frontend.</p>
-          </div>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 text-sm font-semibold text-slate-500 hover:text-red-500 border border-slate-200 hover:border-red-200 px-4 py-2 rounded-xl transition"
+          >
+            <LogOut size={16} />
+            Logout
+          </button>
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">

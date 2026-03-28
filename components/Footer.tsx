@@ -94,12 +94,12 @@ export default function Footer() {
             >
               💎
             </div>
-            <span style={{ fontSize: "16px", fontWeight: "900", color: "#111" }}>Treasure</span>
-            <span style={{ fontSize: "16px", fontWeight: "400", color: "#111", marginLeft: "-6px" }}> Fun</span>
+            <span style={{ fontSize: "16px", fontWeight: "900", color: "#111" }}>Quantum</span>
+            <span style={{ fontSize: "16px", fontWeight: "400", color: "#111", marginLeft: "-6px" }}> NFT</span>
           </div>
 
           <p style={{ fontSize: "14px", color: "#666", lineHeight: "1.6", marginBottom: "20px" }}>
-            Treasure Fun is a Web3 revenue platform based on NFT collections
+            Quantum NFT is a Web3 revenue platform based on NFT collections
           </p>
 
           <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
@@ -161,7 +161,7 @@ export default function Footer() {
           <h4 style={{ fontSize: "16px", fontWeight: "700", color: "#111", marginBottom: "12px" }}>Company</h4>
           <p style={{ fontSize: "13px", color: "#666", lineHeight: "1.6", marginBottom: "20px" }}>
             Join our mailing list to stay in the loop with our newest feature releases, NFT listing, tips and tricks for
-            navigating Treasure webpage.
+            navigating Quantum NFT webpage.
           </p>
 
           <div style={{ display: "flex", gap: "0", marginBottom: "36px" }}>
@@ -246,7 +246,7 @@ export default function Footer() {
           gap: "24px",
         }}
       >
-        <span style={{ fontSize: "13px", color: "#888" }}>© 2023 - TreasureMeta Technology, Inc</span>
+        <span style={{ fontSize: "13px", color: "#888" }}>© 2023 - Quantum NFT Technology, Inc</span>
         <a href="#" style={{ fontSize: "13px", color: "#888", textDecoration: "none" }}>
           Privacy Policy
         </a>

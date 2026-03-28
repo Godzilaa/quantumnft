@@ -30,9 +30,9 @@ export const nfts = new Map<string, NFT>(); // nftId → NFT
 // Dynamic page content editable via admin route
 export let pageContent = {
   heroTitle: "EXPLORE, DISCOVER AND EARN BIG WITH ONE OF THE TOP WEB3 NFT MARKETPLACES IN THE WORLD",
-  heroSubtitle: "Treasure Fun leverages a proprietary AI-powered algorithmic trading model...",
+  heroSubtitle: "Quantum NFT leverages a proprietary AI-powered algorithmic trading model...",
   reserveTitle: "RESERVE AND SELL YOUR NFT EASILY",
-  reserveSubtitle: "Earning income in Treasure Fun is simple: just RESERVE and then TRADE to EARN",
+  reserveSubtitle: "Earning income in Quantum NFT is simple: just RESERVE and then TRADE to EARN",
   footerText: "The world's first and largest digital marketplace for crypto collectibles and non-fungible tokens (NFTs).",
 };
 

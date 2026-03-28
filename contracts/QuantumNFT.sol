@@ -6,11 +6,11 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 /**
- * @title TreasureFunNFT
+ * @title QuantumNFTNFT
  * @dev An ERC721 NFT Contract that allows users to mint NFTs by paying a fee in USDT.
  * Deployable on any EVM-compatible chain (BSC, Polygon, Ethereum, etc)
  */
-contract TreasureFunNFT is ERC721URIStorage, Ownable {
+contract QuantumNFTNFT is ERC721URIStorage, Ownable {
     uint256 private _nextTokenId;
     
     // Interface for the USDT Token contract on your chosen blockchain
@@ -28,7 +28,7 @@ contract TreasureFunNFT is ERC721URIStorage, Ownable {
      * @param _mintFee The initial fee to mint an NFT
      */
     constructor(address _usdtAddress, uint256 _mintFee) 
-        ERC721("Treasure Fun Collection", "TUFT") 
+        ERC721("Quantum NFT Collection", "QNFT") 
         Ownable(msg.sender) 
     {
         usdtToken = IERC20(_usdtAddress);

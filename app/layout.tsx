@@ -15,7 +15,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Treasure Fun - Web3 NFT Marketplace",
+  title: "Quantum NFT - Web3 NFT Marketplace",
   description: "Explore, Discover and Earn Big with one of the top Web3 NFT Marketplaces in the World",
 };
 

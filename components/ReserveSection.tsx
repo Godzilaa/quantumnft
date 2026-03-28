@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 export default function ReserveSection() {
   const [content, setContent] = useState({
     reserveTitle: "RESERVE AND SELL YOUR NFT EASILY",
-    reserveSubtitle: "Earning income in Treasure Fun is simple: just RESERVE and then TRADE to EARN"
+    reserveSubtitle: "Earning income in Quantum NFT is simple: just RESERVE and then TRADE to EARN"
   });
 
   useEffect(() => {
@@ -134,7 +134,7 @@ export default function ReserveSection() {
                 boxShadow: "0 4px 16px rgba(61,191,184,0.35)",
               }}
             >
-              GET TUFT
+              GET QNFT
             </button>
             <button
               style={{

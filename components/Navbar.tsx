@@ -94,7 +94,7 @@ const ChevronDown = () => (
 );
 
 const MENU_ITEMS = [
-  { Icon: DropBallotIcon,  label: "TreasureFun", chevron: true  },
+  { Icon: DropBallotIcon,  label: "QuantumNFT", chevron: true  },
   { Icon: DropHeadsetIcon, label: "Service",      chevron: false },
   { Icon: DropAccountIcon, label: "Account",      chevron: false },
   { Icon: DropWalletIcon,  label: "Wallet",       chevron: false },
@@ -170,8 +170,8 @@ export default function Navbar() {
               display: "flex", alignItems: "center", justifyContent: "center",
               fontSize: "18px",
             }}>💎</div>
-            <span style={{ fontSize: "16px", fontWeight: "900", color: "#111" }}>Treasure</span>
-            <span style={{ fontSize: "16px", fontWeight: "400", color: "#111", marginLeft: "-6px" }}> Fun</span>
+            <span style={{ fontSize: "16px", fontWeight: "900", color: "#111" }}>Quantum</span>
+            <span style={{ fontSize: "16px", fontWeight: "400", color: "#111", marginLeft: "-6px" }}> NFT</span>
           </div>
 
           {/* Nav links */}

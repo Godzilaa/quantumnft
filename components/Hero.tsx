@@ -20,7 +20,7 @@ const EarnIcon = () => (
 export default function Hero() {
   const [content, setContent] = useState({
     heroTitle: "DISCOVER, COLLECT, AND SELL EXTRAORDINARY NFTs",
-    heroSubtitle: "Welcome to Treasure Fun - the world's first and largest digital marketplace for crypto collectibles. Start exploring and earning today."
+    heroSubtitle: "Welcome to Quantum NFT - the world's first and largest digital marketplace for crypto collectibles. Start exploring and earning today."
   });
 
   useEffect(() => {
@@ -77,7 +77,7 @@ export default function Hero() {
                 Multi-Reward
               </h3>
               <p style={{ fontSize: "14px", color: "#555", lineHeight: "1.6" }}>
-                Treasure Fun leverages a proprietary AI-powered algorithmic trading model, and provides a dual earnings
+                Quantum NFT leverages a proprietary AI-powered algorithmic trading model, and provides a dual earnings
                 mechanism with trading rewards as well as referral rewards.
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function Hero() {
                 Earn Future Value
               </h3>
               <p style={{ fontSize: "14px", color: "#555", lineHeight: "1.6" }}>
-                Treasure Fun reduces the entry hurdles of the NFT market and expands the boundaries of the NFT
+                Quantum NFT reduces the entry hurdles of the NFT market and expands the boundaries of the NFT
                 collection &amp; trading through its innovative AI algorithmic trading process and rewarding financial
                 model.
               </p>

@@ -125,7 +125,7 @@ export default function DesktopDashboard() {
                 <Package className="text-[#64d0f6]" size={22} />
             </div>
             <span className="text-[22px] font-extrabold tracking-tight text-slate-900 mt-0.5">
-                Treasure <span className="font-semibold text-slate-600">Fun</span>
+                Quantum <span className="font-semibold text-slate-600">NFT</span>
             </span>
             </div>
 
@@ -263,7 +263,7 @@ export default function DesktopDashboard() {
                     </div>
 
                     <div className="flex flex-col gap-1.5 z-10 w-full min-w-0">
-                        <div className="text-slate-500 text-[15px] font-semibold tracking-wide">TUFT Balance</div>
+                        <div className="text-slate-500 text-[15px] font-semibold tracking-wide">QNFT Balance</div>
                         <div className="flex items-center gap-3 truncate">
                         <BoxIcon />
                         <span className="font-extrabold text-[28px] text-[#1f2833] tracking-tight truncate w-full">1,333,488</span>
@@ -558,12 +558,12 @@ function StakeTabContent({ myNfts }: { myNfts: any[] }) {
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div>
               <h2 className="text-3xl font-extrabold text-white mb-2 tracking-tight">NFT Staking</h2>
-              <p className="text-slate-400 font-semibold mb-8 max-w-sm">Stake your Collectibles to generate daily passive TUFT yields.</p>
+              <p className="text-slate-400 font-semibold mb-8 max-w-sm">Stake your Collectibles to generate daily passive QNFT yields.</p>
               
               <div className="flex gap-8 border-t border-slate-700/50 pt-6">
                  <div>
                     <div className="text-slate-400 text-sm font-bold mb-1">Total Staked</div>
-                    <div className="text-2xl font-extrabold text-white">1,240 <span className="text-cyan-400 text-lg">TUFT/day</span></div>
+                    <div className="text-2xl font-extrabold text-white">1,240 <span className="text-cyan-400 text-lg">QNFT/day</span></div>
                  </div>
                  <div>
                     <div className="text-slate-400 text-sm font-bold mb-1">Current APY</div>
@@ -575,7 +575,7 @@ function StakeTabContent({ myNfts }: { myNfts: any[] }) {
             <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6 border border-white/10 flex flex-col gap-4">
                <div className="flex justify-between items-center text-white font-bold">
                  <span>My Staking Pool</span>
-                 <span className="text-cyan-400 text-sm">Reward: 0.00 TUFT</span>
+                 <span className="text-cyan-400 text-sm">Reward: 0.00 QNFT</span>
                </div>
                
                <div className="h-2 w-full bg-slate-800 rounded-full overflow-hidden">
@@ -630,7 +630,7 @@ function EarnTabContent() {
          <div className="bg-white/90 backdrop-blur-xl rounded-[24px] shadow-sm border border-white p-6 relative overflow-hidden h-[160px] flex flex-col justify-between">
            <div className="absolute top-0 right-0 w-2 h-full bg-[#2fd49f]"></div>
            <div className="text-slate-500 font-bold text-sm">Total Yield Accrued</div>
-           <div className="text-4xl font-extrabold text-slate-800">8,204.5 <span className="text-lg">TUFT</span></div>
+           <div className="text-4xl font-extrabold text-slate-800">8,204.5 <span className="text-lg">QNFT</span></div>
          </div>
          <div className="bg-gradient-to-b from-[#21c2a8] to-[#12a188] rounded-[24px] shadow-lg p-6 h-[160px] flex flex-col justify-between text-white relative">
            <div className="absolute right-[-20px] bottom-[-20px] opacity-10"><Rocket size={100} /></div>
@@ -647,7 +647,7 @@ function EarnTabContent() {
          
          <div className="flex flex-col gap-4">
            {[
-             { name: "USDT / TUFT Liquidity", apy: "240% APY", tvl: "$124,500", tags: ['Hot', 'Dual'] },
+             { name: "USDT / QNFT Liquidity", apy: "240% APY", tvl: "$124,500", tags: ['Hot', 'Dual'] },
              { name: "NFT Collateralized Reserve", apy: "85% APY", tvl: "820 NFTs", tags: ['Stable'] },
              { name: "SOL Single Sided", apy: "12% APY", tvl: "$89,000", tags: ['Low Risk'] },
            ].map((pool, idx) => (
@@ -734,13 +734,13 @@ function AssetsTabContent({ walletBalance, userWallet }: any) {
              </div>
           </div>
 
-          {/* TUFT Token Row */}
+          {/* QNFT Token Row */}
           <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 p-4 hover:bg-slate-50 transition rounded-2xl cursor-pointer">
              <div className="w-12 h-12 rounded-full bg-[#1dbca5] text-white flex items-center justify-center font-bold text-xl">
                T
              </div>
              <div>
-               <div className="font-extrabold text-slate-800 text-lg">Treasure Fun Token</div>
+               <div className="font-extrabold text-slate-800 text-lg">Quantum NFT Token</div>
                <div className="font-semibold text-slate-400 text-sm">Platform Yield Token</div>
              </div>
              <div className="text-right">

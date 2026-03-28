@@ -12,23 +12,23 @@ async function main() {
   const usdtAddress = await mockUSDT.getAddress();
   console.log("Mock USDT deployed to:", usdtAddress);
 
-  // 2. Deploy the TreasureFunNFT contract
+  // 2. Deploy the QuantumNFT contract
   // Let's set the mint fee to 10 USDT (accounting for 18 decimals)
-  console.log("Deploying TreasureFunNFT...");
+  console.log("Deploying QuantumNFT...");
   const mintFee = hre.ethers.parseUnits("10", 18); 
-  const TreasureFunNFT = await hre.ethers.getContractFactory("TreasureFunNFT");
-  const nft = await TreasureFunNFT.deploy(usdtAddress, mintFee);
+  const QuantumNFT = await hre.ethers.getContractFactory("QuantumNFT");
+  const nft = await QuantumNFT.deploy(usdtAddress, mintFee);
   await nft.waitForDeployment();
   const nftAddress = await nft.getAddress();
 
   console.log("-----------------------------------------");
   console.log("Deployment Complete!");
   console.log("Mock USDT Address :", usdtAddress);
-  console.log("Treasure Fun NFT  :", nftAddress);
+  console.log("Quantum NFT       :", nftAddress);
   console.log("-----------------------------------------");
   console.log("To mint an NFT on the frontend, users must:");
   console.log("1. Call approve() on the MockUSDT contract giving the NFT Address an allowance of", mintFee.toString());
-  console.log("2. Call mintNFT() on the TreasureFunNFT contract");
+  console.log("2. Call mintNFT() on the QuantumNFT contract");
 }
 
 main().catch((error) => {

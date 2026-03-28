@@ -119,7 +119,7 @@ export default function MintModal({ isOpen, onClose, walletAddress, onSuccess }:
             <textarea 
               value={nftDescription}
               onChange={(e) => setNftDescription(e.target.value)}
-              placeholder="Describe your Treasure Fun digital asset..."
+              placeholder="Describe your Quantum NFT digital asset..."
               rows={3}
               disabled={loading}
               className="w-full px-4 py-3 rounded-2xl border-2 border-slate-100 bg-slate-50/50 focus:bg-white focus:border-teal-400 focus:ring-4 focus:ring-teal-400/10 outline-none transition-all font-medium text-slate-800 placeholder:text-slate-400 resize-none"

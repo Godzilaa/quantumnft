@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
       name,
       description: description || "",
       imageUrl,
-      collection: collection || "Treasure Fun Originals",
+      collection: collection || "Quantum NFT Originals",
       createdAt: new Date().toISOString(),
     };
 
