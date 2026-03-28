@@ -73,8 +73,8 @@ function ModalLogo() {
         <span style={{ position: "absolute", top: "4px", left: "-10px", fontSize: "13px", zIndex: 3 }}>⭐</span>
       </div>
       <div style={{ display: "flex", alignItems: "baseline", gap: "5px" }}>
-        <span style={{ fontSize: "22px", fontWeight: "800", color: "#111", letterSpacing: "-0.5px" }}>Treasure</span>
-        <span style={{ fontSize: "22px", fontWeight: "400", color: "#111" }}>Fun</span>
+        <span style={{ fontSize: "22px", fontWeight: "800", color: "#111", letterSpacing: "-0.5px" }}>Quantum</span>
+        <span style={{ fontSize: "22px", fontWeight: "400", color: "#111" }}>NFT</span>
       </div>
     </div>
   );

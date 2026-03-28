@@ -1,3 +1,6 @@
+"use client";
+import React, { useState, useEffect } from "react";
+
 const MultiRewardIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
     <rect width="32" height="32" rx="8" fill="none" stroke="#444" strokeWidth="1.5" />
@@ -15,6 +18,20 @@ const EarnIcon = () => (
 );
 
 export default function Hero() {
+  const [content, setContent] = useState({
+    heroTitle: "DISCOVER, COLLECT, AND SELL EXTRAORDINARY NFTs",
+    heroSubtitle: "Welcome to Quantum NFT - the world's first and largest digital marketplace for crypto collectibles. Start exploring and earning today."
+  });
+
+  useEffect(() => {
+    fetch("/api/content")
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.heroTitle) setContent(data);
+      })
+      .catch(err => console.error("Could not load dynamic content:", err));
+  }, []);
+
   return (
     <section
       style={{
@@ -47,7 +64,7 @@ export default function Hero() {
               letterSpacing: "-0.5px",
             }}
           >
-            EXPLORE, DISCOVER AND EARN BIG WITH ONE OF THE TOP WEB3 NFT MARKETPLACES IN THE WORLD
+            {content.heroTitle}
           </h1>
         </div>
 
@@ -60,7 +77,7 @@ export default function Hero() {
                 Multi-Reward
               </h3>
               <p style={{ fontSize: "14px", color: "#555", lineHeight: "1.6" }}>
-                Treasure Fun leverages a proprietary AI-powered algorithmic trading model, and provides a dual earnings
+                Quantum NFT leverages a proprietary AI-powered algorithmic trading model, and provides a dual earnings
                 mechanism with trading rewards as well as referral rewards.
               </p>
             </div>
@@ -76,7 +93,7 @@ export default function Hero() {
                 Earn Future Value
               </h3>
               <p style={{ fontSize: "14px", color: "#555", lineHeight: "1.6" }}>
-                Treasure Fun reduces the entry hurdles of the NFT market and expands the boundaries of the NFT
+                Quantum NFT reduces the entry hurdles of the NFT market and expands the boundaries of the NFT
                 collection &amp; trading through its innovative AI algorithmic trading process and rewarding financial
                 model.
               </p>

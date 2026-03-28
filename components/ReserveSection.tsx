@@ -1,4 +1,21 @@
+"use client";
+import React, { useState, useEffect } from "react";
+
 export default function ReserveSection() {
+  const [content, setContent] = useState({
+    reserveTitle: "RESERVE AND SELL YOUR NFT EASILY",
+    reserveSubtitle: "Earning income in Quantum NFT is simple: just RESERVE and then TRADE to EARN"
+  });
+
+  useEffect(() => {
+    fetch("/api/content")
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.reserveTitle) setContent(data);
+      })
+      .catch(err => console.error("Could not load dynamic content:", err));
+  }, []);
+
   return (
     <section style={{ background: "white", padding: "80px 0" }}>
       <div
@@ -96,10 +113,10 @@ export default function ReserveSection() {
               letterSpacing: "-0.3px",
             }}
           >
-            RESERVE AND SELL YOUR NFT EASILY
+            {content.reserveTitle}
           </h2>
           <p style={{ fontSize: "15px", color: "#666", lineHeight: "1.7", marginBottom: "32px" }}>
-            Earning income in Treasure Fun is simple: just RESERVE and then TRADE to EARN
+            {content.reserveSubtitle}
           </p>
 
           <div style={{ display: "flex", gap: "16px" }}>
@@ -117,7 +134,7 @@ export default function ReserveSection() {
                 boxShadow: "0 4px 16px rgba(61,191,184,0.35)",
               }}
             >
-              GET TUFT
+              GET QNFT
             </button>
             <button
               style={{
